@@ -1,0 +1,26 @@
+grep -E '^UID_MIN|^UID_MAX' /etc/login.defs
+by checking the file /etc/password, you'll notice that the user flag01 has a password stored in the same file, instead of /etc/shadow
+we can use john the ripper on kali linux to bruteforce the hashed password using the following command after passing the file /etc/passwd from the challenge VM  to kali linux VM:
+
+┌──(kali㉿kali)-[~]
+└─$ john  passwd
+
+OUTPUT:
+    abcdefg
+
+john will find the password without giving any additional parameters, this means the password is weak, which it is, normally one would have to do alittle bit of analysis and give john extra parameters to sharpen it, even then it would naturally take over 3 days to crack a password.
+
+
+you will also notice the encryption algo used, execute the following command:
+
+┌──(kali㉿kali)-[~]
+└─$ john --show passwd
+
+DES is a one way hashing algorithme, also one of the most popular ones out there. a one way hashing algorithme means there is no known decryptors.
+
+lastly, to take it up a notch you can verify the result yourself by encrypting the cracked password and comparing it with the hash using the following command:
+
+┌──(kali㉿kali)-[~]
+└─$ perl -le 'print crypt("abcdefg", "42")'
+42hDRfypTqqnw
+
