@@ -2,7 +2,7 @@
 to find all files owned by a spesific user we use the command 
 	find / -user flag00
 we will see a big output with a lot of permission denied errors 
-i just lookef manually in the output i found two paths without permission denied erroe 
+i just looked manually in the output i found two paths without permission denied erroe 
 
 # we have:
 	/usr/sbin/jhon
@@ -14,11 +14,17 @@ i just lookef manually in the output i found two paths without permission denied
 further 2> will filter out the errors so that they will not output to the console 
 
 in more detail: 2 represents the error descriptor, which is where errors are written to by default they are printed out on the console 
+# for addition 
+
+we can use this command find / -user flag00 2>/dev/null -exec cat {} +
+
+{} will replaced by the files found by find
++  will enable us to read as many arguments as possible per invocation of cat, as cat can take multiple arguments.
 
 # the output of the file is
 	cdiiddwpgswtgt
 
-# trying to access failed 
+# trying to access failed
 
 start thinking maybe we need to decode it we're just going to go to 
  going to 
