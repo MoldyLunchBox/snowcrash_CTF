@@ -28,16 +28,6 @@ hen the user run any command on the terminal, its request to the shell to search
 It is very simple to view the Path of the relevant user with help of echo command.
 
 
-
-ß
-
-
-
-
-
-
- LEVEL 03
-
 ## Vulnerability & exploit
 
 Env invocation by a privileged user -> Privilege escalation by providing replacement to built-in command
@@ -111,6 +101,6 @@ level03@SnowCrash:~$ export PATH=/tmp:$PATH && echo $PATH
 Finally, run the executable to get the token for level04:
 
 ```
-level03@SnowCrash:~$ ./level03
-Check flag.Here is your token : XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
 ```
