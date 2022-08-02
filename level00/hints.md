@@ -3,6 +3,10 @@ to find all files owned by a spesific user we use the command
 	find / -user flag00
 we will see a big output with a lot of permission denied errors 
 i just looked manually in the output i found two paths without permission denied erroe 
+ we can show all the user have SUID permission 
+ using htis command 
+
+find / -perm -4000 2> /dev/null -exec ls -la {} + 
 
 # we have:
 	/usr/sbin/jhon
