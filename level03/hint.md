@@ -43,7 +43,7 @@ If you notice ‘.’ in environment PATH variable it means that the logged user
 	chmod 777 eho 
 	echo $PATH 
 	pwd
-	export PATH=//home/user/level03:$PATH
+	export PATH=/home/user/level03:$PATH
 
     Finally, run the executable to get the token for level04:
 
