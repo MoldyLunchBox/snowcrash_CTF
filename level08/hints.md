@@ -1,23 +1,56 @@
-# what we found
+# level 08 
 
-and the home sirectory we found executable eith suid/guid
+# what we found 
 
-    level09@SnowCrash:~$ ls -l
-    total 12
-    -rwsr-sr-x 1 flag09 level09 7640 Mar  5  2016 level09
-    ----r--r-- 1 flag09 level09   26 Mar  5  2016 token
-    level09@SnowCrash:~$ cat token
-    f4kmm6p|=�p�n��DB�Du{��
-we try to know more and with ltrace we found nothing but that a phrase with you should not reverse it 
+in our home directory , we see an executable with /suid/guid permissions and another file token that we can't acess to it
 
-we try to enter diferent inputs to see what going to happen 
-        
-        level09@SnowCrash:~$ ./level09 token
-        tpmhr
-        level09@SnowCrash:~$ ./level09 ramoukha
-         hfnos
-        level09@SnowCrash:~$ ./level09 aaaaaa
-        abcdefg
-finding that the we can pass a string input to the executable and encodes it by rotating each character by increpting an index 
+```
+total 16
+-rwsr-s---+ 1 flag08 level08 8617 Mar  5  2016 level08
+-rw-------  1 flag08 flag08    26 Mar  5  2016 token
 
-we can create a script to do that and we get the flag 
+```
+
+when we try to execute the file 
+
+```
+./level08 [file to read]
+
+```
+
+we get output like that 
+
+## how to solve the challenge 
+
+when we try with a file that we have the executable shows its content:
+
+let's try with token  
+```
+level08@SnowCrash:~$ ./level08 token
+You may not access 'token'
+```
+so what going to happen if we try to create anothe file and will just give the file a token name 
+
+it's not working its give us the same error and it's not the same file 
+
+let's try to debug the to see what happening 
+
+```
+strstr("token", "token")                                                         = "token"
+printf("You may not access '%s'\n", "token"You may not access 'token'
+)                                     = 27
+exit
+```
+
+we can see that the program check the name of the file if it's token so the output going to be you don't have acess to token 
+
+## solve the challenge 
+
+the first thing come to our mind is chaging the file name 
+
+let's try to change it and see what going to happen
+
+mv token my_token
+
+level08@SnowCrash:~$ ./level08 ro
+quif5eloekouj29ke0vouxean
