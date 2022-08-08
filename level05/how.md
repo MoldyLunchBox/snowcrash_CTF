@@ -1,6 +1,6 @@
 # LEVEL 05
 
-when we log into the level05 a message appear for informing us that there is a message
+when we log into the level05 a message appears to informe us that there is a message
 
 # in linux server
 
@@ -16,7 +16,7 @@ When a script executed by Cron is editable by unprivileged users, those unprivil
 
 ## Solving the challenge
 
-cron job seems to inform us that he set up a task to run every 2 min
+cron job seems to inform us that it  set up a task to run every 2 min
 during the following script is run as root:
 
 ```
@@ -30,7 +30,7 @@ done
 ```
 when we see the script we can understand that using a script the user will loop through all the files in /opt/openarenaserver and run them in a bash shell 
 
-so it's appear that we can create a file in this directory and run it as a flag05  using the crontab and since the script in that directory does not return or print the output of the command because it's execute by a diferent user  we will redirect the output to another file in /tmp/something because all the useres on the server can write or execute script in the tmp file 
+so it appears that we can create a file in this directory and run it as a flag05  using the crontab and since the script in that directory does not return or print the output of the command because it's executed by a diferent user  we will redirect the output to another file in /tmp/something because all the useres on the server can write or execute script in the tmp file 
 
 		level05@SnowCrash:/opt/openarenaserver$ touch raja.sh
 		level05@SnowCrash:/opt/openarenaserver$ chmod 777 raja.sh 
