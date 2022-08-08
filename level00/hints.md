@@ -1,9 +1,9 @@
 # find the files owned by the user flag00
-to find all files owned by a spesific user we use the command 
+to find all files owned by a spesific user we use the command
 	find / -user flag00
 we will see a big output with a lot of permission denied errors 
-i just looked manually in the output i found two paths without permission denied erroe 
- we can show all the user have SUID permission 
+i just looked manually in the output i found two paths without permission denied error
+we can show all the user have SUID permission 
  using htis command 
 
 find / -perm -4000 2> /dev/null -exec ls -la {} + 
@@ -34,11 +34,10 @@ start thinking maybe we need to decode it we're just going to go to
  going to 
  https://www.dcode.fr/caesar-cipher
 
- first recomended cipher is ceasar, give us output result 
+first recomended cipher is ceasar, give us output result 
  	nottoohardhere
 
 # try to log in with the first output 
-
 
 $ su flag00
 $ not too hard here 
