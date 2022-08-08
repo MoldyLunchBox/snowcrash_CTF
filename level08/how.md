@@ -29,9 +29,9 @@ let's try with token
 level08@SnowCrash:~$ ./level08 token
 You may not access 'token'
 ```
-so what going to happen if we try to create anothe file and will just give the file a token name 
+so what's going to happen if we try to create another file and will just give the file a token name 
 
-it's not working its give us the same error and it's not the same file 
+it won't work and it will give us the same error and it's not the same file 
 
 let's try to debug the to see what happening 
 
@@ -42,7 +42,7 @@ printf("You may not access '%s'\n", "token"You may not access 'token'
 exit
 ```
 
-we can see that the program check the name of the file if it's token so the output going to be you don't have acess to token 
+we can see that the program checks the name of the file if its token so the output going to be "you don't have acess to token" 
 
 ## solve the challenge 
 
