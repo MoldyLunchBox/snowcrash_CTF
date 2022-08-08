@@ -8,10 +8,10 @@ there is a folder /var/spool/mail where services and daemons that are configured
 
 ## Vulnerability & exploit
 
-we know that Cron Jobs are used for scheduling tasks by executing commands at specific dates and times on the server.
-and the most of time commonly used for sysadmin jobs as backups or cleaning /tmp 
+we know that Cron Jobs are used for scheduling tasks by executing commands at specific dates and times on the server,
+and most of the time commonly used for sysadmin jobs as backups or cleaning /tmp.
 
-When a script executed by Cron is editable by unprivileged users, those unprivileged users can escalate their privilege by editing this script, and waiting for it to be executed by Cron under root privileges or specific user "flag05" for ex using -c flag .
+When a script executed by Cron is editable by unprivileged users, those unprivileged users can escalate their privilege by editing this script, and waiting for it to be executed by Cron under root privileges or specific user "flag05" for ex using: -c flag .
 
 
 ## Solving the challenge
